@@ -21,6 +21,9 @@ function App() {
             listContainer.map((entry, i) => <p key={i}>{entry}</p>)
           }
         </div>
+        <div className="list-display-selection" style={{ fontSize: 36 }}>
+          {selectedItem && <p>{selectedItem}</p>}
+        </div>
         <AddItem setListContainer={setListContainer} />
         <button style={{ alignSelf: "center" }} onClick={() => selectItem()}>Select an Item</button>
     </div>
