@@ -27,6 +27,11 @@ function App() {
           Learn React
         </a>
       </header>
+        <div className="list-display-container" >
+          {
+            listContainer.map((entry, i) => <p key={i}>{entry}</p>)
+          }
+        </div>
         <AddItem setListContainer={setListContainer} />
         <button style={{ alignSelf: "center" }} onClick={() => selectItem()}>Select an Item</button>
     </div>
