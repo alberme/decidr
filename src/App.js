@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import AddItem from './components/AddItem';
 
 function App() {
   const [selectedItem, setSelectedItem] = useState('');
@@ -25,6 +26,7 @@ function App() {
           Learn React
         </a>
       </header>
+        <AddItem setListContainer={setListContainer} />
         <button style={{ alignSelf: "center" }} onClick={() => selectItem()}>Select an Item</button>
     </div>
   );
