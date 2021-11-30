@@ -4,6 +4,7 @@ import { useState } from 'react';
 import AddItem from './components/AddItem';
 
 function App() {
+  const [listContainer, setListContainer] = useState([]);
   const [selectedItem, setSelectedItem] = useState('');
 
   const selectItem = () => {
