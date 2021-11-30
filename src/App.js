@@ -25,6 +25,7 @@ function App() {
           Learn React
         </a>
       </header>
+        <button style={{ alignSelf: "center" }} onClick={() => selectItem()}>Select an Item</button>
     </div>
   );
 }
