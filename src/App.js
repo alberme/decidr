@@ -13,7 +13,9 @@ function App() {
   }
 
   const onRemove = (itemId) => {
-    const updatedListContainer = listContainer.filter( (item, id)=> id !== itemId);
+    // because array is displayed in reverse, we need to calculate the actual index value
+    const actualItemId = listContainer.length - 1 - itemId;
+    const updatedListContainer = listContainer.filter((item, id)=> id !== actualItemId);
     setListContainer(updatedListContainer);
   }
 
