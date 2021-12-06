@@ -12,9 +12,17 @@ function App() {
     setSelectedItem( listContainer.length > 0 ? listContainer[random] : '' );
   }
 
+  const onRemove = (itemId) => {
+    const updatedListContainer = listContainer.filter( (item, id)=> id !== itemId);
+    setListContainer(updatedListContainer);
+  }
+
   const renderMain = () => {
     if (listContainer.length > 0 && !selectedItem) {
-      return <DisplayList listContainer={listContainer}/>;
+      return <DisplayList
+        listContainer={listContainer}
+        onRemove={onRemove}
+      />;
     } else if (selectedItem) {
       return (
         <>
