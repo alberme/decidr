@@ -64,8 +64,20 @@ footer {
   padding: 0.5rem 0.5rem 0 0.6rem;
 }
 
+.list-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+}
+
+.list-item-text {
+  font-size: 1rem;
+}
+
 .list-selection-container {
-  font-size: 2rem;
+  font-size: 4rem;
 }
 
 .list-display-container {
@@ -78,7 +90,6 @@ footer {
   margin: 1rem;
   background-color: whitesmoke;
   box-shadow: 1px 1px 6px gray;
-  font-size: 1.5rem;
 }
 
 .list-display-container p {
