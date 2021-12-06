@@ -20,20 +20,18 @@ function App() {
   }
 
   const renderMain = () => {
-    if (listContainer.length > 0 && !selectedItem) {
+    if (!selectedItem) {
       return <DisplayList
         listContainer={listContainer}
         onRemove={onRemove}
       />;
-    } else if (selectedItem) {
+    } else {
       return (
         <>
           <h4>The Winner Is</h4>
           <p>{selectedItem}</p>
         </>
       );
-    } else {
-      return <h4>Add Items To Your List!</h4>;
     }
   }
 
