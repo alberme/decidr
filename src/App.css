@@ -34,6 +34,7 @@ footer {
 .form-add-item {
   display: flex;
   justify-content: center;
+  align-items: baseline;
   margin: 0.5rem;
 }
 
@@ -43,6 +44,20 @@ footer {
   width: 50vw;
   border-color: white;
   padding: 0.5rem;
+}
+
+.form-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 11vh;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.85rem;
+  margin: 0;
+  padding: 0.5rem 0.5rem 0 0.6rem;
 }
 
 .list-selection-container {
