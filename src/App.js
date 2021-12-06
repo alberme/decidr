@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import AddItem from './components/AddItem';
+import DisplayList from './components/DisplayList';
 
 function App() {
   const [listContainer, setListContainer] = useState([]);
@@ -8,26 +9,39 @@ function App() {
 
   const selectItem = () => {
     const random = Math.floor(Math.random() * listContainer.length);
-    setSelectedItem( listContainer[random] );
+    setSelectedItem( listContainer.length > 0 ? listContainer[random] : '' );
+  }
+
+  const renderMain = () => {
+    if (listContainer.length > 0 && !selectedItem) {
+      return <DisplayList listContainer={listContainer}/>;
+    } else if (selectedItem) {
+      return (
+        <>
+          <h4>The Winner Is</h4>
+          <p>{selectedItem}</p>
+        </>
+      );
+    } else {
+      return <h4>Add Items To Your List!</h4>;
+    }
   }
 
   return (
     <div className="App">
-      <div className="app-container" style={{ display: "flex", flexDirection: "column", justifyContent: "center"}}>
-        <header className="App-header">
-          <h2>Decidr</h2>
-        </header>
-        <div className="list-display-container" >
-          {
-            listContainer.map((entry, i) => <p key={i}>{entry}</p>)
-          }
-        </div>
-        <div className="list-display-selection" style={{ fontSize: 36 }}>
-          {selectedItem && <p>{selectedItem}</p>}
-        </div>
-        <AddItem setListContainer={setListContainer} />
-        <button style={{ alignSelf: "center" }} onClick={() => selectItem()}>Select an Item</button>
-      </div>
+      <header className="App-header">
+        <h2>Decidr</h2>
+      </header>
+      <main>
+      { renderMain() }
+      </main>
+      <footer>
+        <AddItem
+          setListContainer={setListContainer} 
+          setSelectedItem={setSelectedItem}
+        />
+        <button style={{ alignSelf: "center" }} onClick={() => selectItem()}>Decide!</button>
+      </footer>
     </div>
   );
 }
