@@ -1,39 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  /* height: 200vh; */
+  max-height: 100vh;
 }
 
 .App-header {
   background-color: #0055ff;
-  height: 10vh;
-  min-height: 5vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 10vh;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  overflow: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button {
+  background-color: #0A84FF;
+  color: white;
+  border-radius: 10%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+footer {
+  margin-bottom: 1rem;
+}
+
+.form-add-item {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem;
+}
+
+.form-add-item input {
+  margin-right: 0.5rem;
+  box-shadow: 2px 2px 5px gray;
+  width: 50vw;
+  border-color: white;
+  padding: 0.5rem;
+}
+
+.list-selection-container {
+  font-size: 2rem;
+}
+
+.list-display-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 1rem 0.5rem 1rem 0.5rem
+}
+
+.list-display-container p {
+  margin: 0.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  .App {
+    height: 100vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  header {
+    flex: 0 0 auto;
+  }
+
+  #add-item {
+    flex: 0 0 auto;
+  }
+
+  main {
+    flex: 1 1 auto;
+  }
+  
+  footer {
+    flex: 0 0 auto;
   }
 }
