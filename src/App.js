@@ -39,6 +39,7 @@ function App() {
         <AddItem
           setListContainer={setListContainer} 
           setSelectedItem={setSelectedItem}
+          listContainer={listContainer}
         />
         <button style={{ alignSelf: "center" }} onClick={() => selectItem()}>Decide!</button>
       </footer>
