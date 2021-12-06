@@ -1,30 +1,32 @@
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 .App {
   display: flex;
   flex-direction: column;
   text-align: center;
-  /* height: 200vh; */
   max-height: 100vh;
 }
 
 .App-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #0055ff;
   min-height: 10vh;
+  max-height: 10vh;
   color: white;
-}
-
-main {
-  overflow: auto;
 }
 
 button {
   background-color: #0A84FF;
   color: white;
-  border-radius: 10%;
+  border-color: white;
+  border-radius: 6px;
+  box-shadow: none;
   padding: 0.5rem 1rem 0.5rem 1rem;
+  min-width: 15vw;
 }
 
 footer {
@@ -33,15 +35,17 @@ footer {
 
 .form-add-item {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: baseline;
-  margin: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .form-add-item input {
+  width: 80vw;
+  min-width: 50vw; 
   margin-right: 0.5rem;
   box-shadow: 2px 2px 5px gray;
-  width: 50vw;
   border-color: white;
   padding: 0.5rem;
 }
@@ -66,11 +70,15 @@ footer {
 
 .list-display-container {
   display: flex;
+  max-height: calc(80vh - 150px);
   flex-direction: column;
   align-items: center;
+  overflow: auto;
+  padding: 0.5rem;
+  margin: 1rem;
+  background-color: whitesmoke;
+  box-shadow: 1px 1px 6px gray;
   font-size: 1.5rem;
-  padding: 0;
-  margin: 1rem 0.5rem 1rem 0.5rem
 }
 
 .list-display-container p {
@@ -95,6 +103,10 @@ footer {
   }
   
   footer {
-    flex: 0 0 auto;
+    flex: 0 0 auto; 
+  }
+  .form-input-container input {
+    margin: 0;
+    
   }
 }
